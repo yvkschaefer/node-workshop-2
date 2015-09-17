@@ -120,20 +120,3 @@
   * Copy your upgraded location server to a file called `location-image-server.js`
   * Using the documentation, figure out how to build an image URL that will be centered around the latitude/longitude you have found
   * Instead of outputting the location to the user, output an `<img>` tag whose `src` parameter will be the URL you just built
-  ### Continuation-Passing Style
-    * Read about [Continuation-Passing Style](http://matt.might.net/articles/by-example-continuation-passing-style/)
- **only up to and including** the "CPS in JavaScript" section
- * Create a file called `cps.js` where all your code will be
- * Using what you read, re-write your function from the Basic JavaScript workshop that returns the first character of a string using CPS
- * Use the newly created function to show that you understand the concept
- * Create a CPS function that returns the last character of a string
- * Use the newly created function to show that you understand the concept
- * Create a function that takes a string and a continuation (callback)
- * Your function should use the two previous functions you created to "return" a string that contains both the first and last character of the initial string
- * I should be able to use your function as such:
- ```javascript
- getFirstAndLast("hello", function(newStr) {console.log(newStr);  }); // should output "ho"
- ```
- 
-  
-  * Add/commit/push
