@@ -114,9 +114,9 @@
   
 ### Location server challenge!!!
   * So far, the web servers we created have been outputting text to the user. Since HTML is just text, we should be able to output HTML to the user
-  * Show this to yourself by taking one of the servers you created previously, and instead of returning "Hello World", return the string "<h1>Hello World</h1>"
+  * Show this to yourself by taking one of the servers you created previously, and instead of returning "Hello World", return the string "&lt;h1&gt;Hello World&lt;/h1&gt;"
   * Read the documentation for [Google Static Maps API](https://developers.google.com/maps/documentation/static-maps/intro)
   * Get an API key for this service
   * Copy your upgraded location server to a file called `location-image-server.js`
   * Using the documentation, figure out how to build an image URL that will be centered around the latitude/longitude you have found
-  * Instead of outputting the location to the user, output an `<img>` tag whose `src` parameter will be the URL you just built
+  * Instead of outputting the location to the user, output an `&lt;img&gt;` tag whose `src` parameter will be the URL you just built
