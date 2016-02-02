@@ -6,18 +6,16 @@
   * Fork this repository and clone it in a new Cloud9 workspace.
   * All the work will be done in the `master` branch.
 
-### Continuation-Passing Style
-  * Read about [Continuation-Passing Style](http://matt.might.net/articles/by-example-continuation-passing-style/) **only up to and including** the "CPS in JavaScript" section
+### Creating our own callback-receiving functions (higher-order functions)
   * Create a file called `cps.js` where all your code will be
-  * Using what you read, re-write your function from the Basic JavaScript workshop that returns the first character of a string using CPS
-  * Use the newly created function to show that you understand the concept
-  * Create a CPS function that returns the last character of a string
-  * Use the newly created function to show that you understand the concept
-  * Create a function that takes a string and a continuation (callback)
-  * Your function should use the two previous functions you created to "return" a string that contains both the first and last character of the initial string
-  * I should be able to use your function as such:
+  * Create a function called `firstChar` that takes a string and "returns" the first character of the string **after one second**.
+  * **NOTE**: You won't be allowed to use the `return` keyword, because you'll only be "returning" in the callback to `setTimeout`, *way after your function has finished executing*.
+  * Create a function called `lastChar` that takes a string and "returns" the last character of the string after one second.
+  * Create a function called `getFirstAndLast` that takes a string and "returns" the first+last character of the string. Your function should use `firstChar` and `lastChar` to do its work. I should be able to call your function like this:
 ```javascript
-  getFirstAndLast("hello", function(newStr) { console.log(newStr); }); // should output "ho"
+  getFirstAndLast("hello", function(firstLast) {
+    console.log(firstLast); // should output "ho"
+  }); 
 ```
   * Add/commit/push
   * Create a pull request. This PR will contain ALL the work for this workshop, so give it a nice title instead of the default commit text!
