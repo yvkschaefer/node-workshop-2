@@ -5,20 +5,17 @@
   * Fork this repository and clone it in a new Cloud9 workspace.
   * All the work will be done in the `master` branch.
 
-### Creating our own callback-receiving functions (higher-order functions)
-  * Create a file called `call-callbacks.js` where all your code will be
-  * Create a function called `firstChar` that takes a string and a callback, and "returns" the first character of the string **after one second**.
-  * **NOTE**: You won't be allowed to use the `return` keyword, because you'll only be "returning" in the callback to `setTimeout`, *way after your function has finished executing*.
-  * Create a function called `lastChar` that takes a string and "returns" the last character of the string after one second.
-  * Create a function called `getFirstAndLast` that takes a string and "returns" the first+last character of the string. Your function should use `firstChar` and `lastChar` to do its work. I should be able to call your function like this:
-```javascript
-  getFirstAndLast("hello", function(firstLast) {
-    console.log(firstLast); // should output "ho"
-  });
-```
-  * Add/commit/push
-  * Create a pull request, and **keep pushing to it after each exercise**
-
+### Creating our own callback-receiving function (higher-order function)
+  * Create a file called `request-as-json.js`
+  * In it, create a function called `requestJson` that takes a URL and a callback function as parameters.
+  * In your function, do the following:
+    1. Using the `request` library, make a request to the URL that you were provided.
+    2. When you receive the response:
+      a. If there is an error, call the callback function and pass it the error as the first parameter
+      b. If there is no error, move to step 3
+    3. Use `JSON.parse` inside a try/catch block to parse the response:
+      a. If there was an error parsing JSON, call the callback function and pass it the same error as the first parameter
+      b. If there was no error parsing the JSON, call the callback function and pass it a `null` error as the first parameter, and the parsed response as the second parameter
 
 ### Initializing your project
   * Using `npm init`, initialize your project any way you like.
@@ -31,17 +28,13 @@
 
 ### Your first module!
   * Create a `library` directory at the root of your project
-  * Inside this directory, create a file called `fortune.js`
-  * In this file, create a module that exports one `getFortune` function
-  * When the `getFortune` function is called, it should return a random fortune/motivational quote
+  * Inside this directory, create a file called `request-json.js`
+  * In this file, copy your function `requestJson` from the previous exercise
+  * Export your function from the module as the default export
   * Add/commit/push
 
 ### Using your first module
-  * At the root of the project, create a file called `fortune-teller.js`
-  * In this file, load your `fortune` module that you created in the previous step
-  * Using the module, make your program output a random fortune to the command-line
-  * Run your program from the command line with `node fortune-teller.js`
-  * Add/commit/push
+For the next exercise ("How's the weather?"), make sure to use your `requestJson` module instead of using the regular `request` module. As you do this, you may notice that your `requestJson` function stopped working since you put it in a separate file. Find out how and fix it :)
 
 ### How's the weather?
   * Go to [Forecast.io API](https://developer.forecast.io/) and read the documentation
