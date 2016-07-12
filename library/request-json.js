@@ -10,17 +10,6 @@
 
 
 var request = require('request');
-var url = 'http://jsonplaceholder.typicode.com/users';
-
-function callBackFunction(err, response){
-    if (err){
-        console.log('there was an error');
-    }
-    else{
-    console.log(response);
-    }
-}
-
 
 function requestJson(url, callBackFunction){
     request(url, function(err, res){
@@ -39,9 +28,6 @@ function requestJson(url, callBackFunction){
     })
 }
 
-requestJson(url, callBackFunction);
 
-
-module.exports = {
-    requestJson: requestJson
-};
+module.exports = 
+    requestJson;
