@@ -51,17 +51,10 @@ prompt.get('userLocation', function(err, answer) {
                        var eachDayData = parsedBody.daily.data.slice(1,5).map(function(data){
                            return data.summary;
                        });
-                       console.log(clc.green(emoji.emojify('The weather:snowman: for the next few days is :sheep:')));
-                       console.log(clc.white(emoji.emojify(':zap:' + eachDayData + ':hatched_chick:')));
+                       console.log(clc.green(emoji.emojify('The weather:snowman: for the next few days is :sheep::zap:' + clc.white(eachDayData) + ':hatched_chick:')));
                    }
                })
             }
         });
     }
 })
-
-// Hint: to display the results in a nice way, a few NPM modules could be useful, including but not limited to:
-// colors
-// cli-table
-// node-emoji
-// Add/commit/push
